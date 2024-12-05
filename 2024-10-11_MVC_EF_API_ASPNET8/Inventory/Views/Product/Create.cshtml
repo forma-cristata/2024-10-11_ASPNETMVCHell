@@ -1,0 +1,48 @@
+﻿@model Product
+@{
+	ViewBag.Title = "CreateProduct";
+
+}
+<h1>CreateProduct</h1>
+<form asp-action="CreateProduct" method="post">
+	<input type="hidden" asp-for="ProductId" value="0" />
+
+	<table class="table table-bordered table-striped">
+		<tr>
+			<td>Name</td>
+			<td><input asp-for="Name" class="form-control" required /></td>
+		</tr>
+
+		<tr>
+			<td>Description</td>
+			<td>
+				<input asp-for="Description" class="form-control" value="@Model.Description" />
+			</td>
+		</tr>
+		<tr>
+			<td>Price</td>
+			<td>
+				$<input asp-for="Price" asp-format="{0:C}" type="number"
+						class="d-inline-block form-control"
+						style="width: calc(100%-1.2em); margin-left: 0.2em;"
+						step="0.01" requiredvalue="@Math.Round(Model.Price, 2)" />
+			</td>
+		</tr>
+		<tr>
+			<td>Stock Quantity</td>
+			<td>
+				<input asp-for="StockQuantity" class="form-control" type="number" step="1" requiredValue="@Model.StockQuantity" />
+			</td>
+		</tr>
+		<tr>
+			<td>Date Added</td>
+			<td>
+				<input asp-for="DateAdded" class="form-control" type="date" requiredValue="@Model.DateAdded" />
+			</td>
+		</tr>
+	</table>
+
+	<button type="submit" class="btn btn-primary">Save</button>
+	<a asp-controller="Home" asp-action="Index" class="btn btn-secondaty">Home</a>
+
+</form>

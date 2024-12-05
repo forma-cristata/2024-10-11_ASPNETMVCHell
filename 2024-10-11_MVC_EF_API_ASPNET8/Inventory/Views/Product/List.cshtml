@@ -1,0 +1,45 @@
+﻿@using Inventory.Shared.Models
+@model List<Product>
+
+@{
+	ViewBag.Title = "Product List";
+}
+
+<h1>Product List</h1>
+<table class="table table-bordered table-striped">
+	<thead>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Stock Quantity</th>
+	</thead>
+	<tbody>
+		@foreach(Product product in Model)
+		{
+			<tr>
+				<td>@product.ProductId</td>
+				<td>
+					<a asp-controller="Product" asp-action="Detail" asp-route-id="@product.Slug">@product.Name</a>
+				</td>
+				<td>@product.Description</td>
+				<td>@product.Price.ToString("C2")</td>
+				<td>@product.StockQuantity.ToString()</td>
+				<td>@product.DateAdded.ToString()</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+<!--Displays all products, including their name price and stock quantity-->
+
+

@@ -1,0 +1,34 @@
+﻿@model Store
+@{
+	ViewBag.Title = "CreateStore";
+
+}
+<h1>CreateStore</h1>
+<form asp-action="CreateStore" method="post">
+	<input type="hidden" asp-for="StoreId" value="0" />
+
+	<table class="table table-bordered table-striped">
+		<tr>
+			<td>Name</td>
+			<td>
+				<input asp-for="Name" class="form-control" value="@Model.Name" required />
+			</td>
+		</tr>
+		<tr>
+			<td>Location</td>
+			<td>
+				<input asp-for="Location" class="form-control" value="@Model.Location" required />
+			</td>
+		</tr>
+		<tr>
+			<td>Date Opened</td>
+			<td>
+				<input asp-for="DateOpened" class="form-control" type="date" requiredValue="@Model.DateOpened" />
+			</td>
+		</tr>
+	</table>
+
+	<button type="submit" class="btn btn-primary">Save</button>
+	<a asp-controller="Home" asp-action="Index" class="btn btn-secondaty">Home</a>
+
+</form>
