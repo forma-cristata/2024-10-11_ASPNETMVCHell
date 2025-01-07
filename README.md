@@ -1,4 +1,4 @@
-# Failed [ASP.NET](http://ASP.NET) MVC Inventory Management System
+# FAILED [ASP.NET](http://ASP.NET) MVC Inventory Management System
 
 This repository contains my attempt at building an inventory management system using [ASP.NET](http://ASP.NET) 8 MVC framework for a school assignment. The project aimed to create a web-based system for managing store products with features like:
 
